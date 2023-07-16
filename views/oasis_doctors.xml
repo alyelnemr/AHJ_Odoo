@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <record id="aly_oasis_doctors_form" model="ir.ui.view">
+            <field name="name">Doctors Form</field>
+            <field name="model">oasis.doctors</field>
+            <field name="arch" type="xml">
+            <form string="Doctors Form" >
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="doctor_name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="doctor_id"/>
+                            <field name="specialty_name"/>
+                        </group>
+                        <group>
+                            <field name="doctor_name_ar"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+            </field>
+        </record>
+
+        <record id="aly_action_oasis_doctor" model="ir.actions.act_window">
+            <field name="name">Doctors</field>
+            <field name="res_model">oasis.doctors</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+    <!-- explicit list view definition -->
+    <record id="aly_oasis_doctors_list" model="ir.ui.view">
+      <field name="name">Doctors</field>
+      <field name="model">oasis.doctors</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="doctor_id"/>
+          <field name="doctor_name"/>
+          <field name="doctor_name_ar"/>
+          <field name="specialty_name"/>
+        </tree>
+      </field>
+    </record>
+
+</odoo>

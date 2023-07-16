@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <record id="aly_action_oasis_work_entities" model="ir.actions.act_window">
+            <field name="name">Work Entities</field>
+            <field name="res_model">oasis.workentity</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+    <!-- explicit list view definition -->
+    <record id="aly_oasis_work_entities_list" model="ir.ui.view">
+      <field name="name">Work Entities</field>
+      <field name="model">oasis.workentity</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="work_entity_id"/>
+          <field name="work_entity_name"/>
+        </tree>
+      </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+
+        <menuitem
+            id="main_menu_aly_ahj_odoo"
+            name="AHJ"
+            web_icon="aly_ahj_odoo,static/description/icon.png"
+           />
+
+
+        <menuitem id="menu_patients_main" name='Patients'
+            parent="main_menu_aly_ahj_odoo" sequence="0" />
+
+        <menuitem id="menu_patients" name='Patients' action="aly_action_oasis_patient"
+            parent="menu_patients_main" sequence="1" />
+
+        <menuitem id="menu_patient_episodes" name='Patient Episodes' action="aly_action_oasis_patient_episodes"
+            parent="menu_patients_main" sequence="2" />
+
+        <menuitem id="menu_patient_prescriptions" name='Patient Prescription' action="aly_action_oasis_patient_prescription"
+            parent="menu_patients_main" sequence="3" />
+
+
+        <menuitem id="menu_doctors" name='Doctors' action="aly_action_oasis_doctor"
+            parent="main_menu_aly_ahj_odoo" sequence="1" />
+        <menuitem id="menu_rooms" name='Rooms' action="aly_action_oasis_room"
+            parent="main_menu_aly_ahj_odoo" sequence="2" />
+        <menuitem id="menu_work_entities" name='Work Entities' action="aly_action_oasis_work_entities"
+            parent="main_menu_aly_ahj_odoo" sequence="3" />
+        <menuitem id="menu_drug_route" name='Drug Route' action="aly_action_drug_route" groups="base.group_no_one"
+            parent="main_menu_aly_ahj_odoo" sequence="4" />
+
+        <record id="module_category_medical_app" model="ir.module.category">
+            <field name="name">Aly AHJ Odoo Oasis</field>
+            <field name="description">By Aly El Nemr .</field>
+        </record>
+
+        <record id="aly_module_category_ahj" model="ir.module.category" >
+            <field name="name">AHJ Oasis Levels</field>
+            <field name="description">AHJ Odoo Oasis - permission levels</field>
+            <field name="parent_id" ref="module_category_medical_app"/>
+        </record>
+
+        <record id="aly_group_oasis_doctor" model="res.groups">
+            <field name="name">Oasis Doctors</field>
+            <field name="category_id" ref="aly_module_category_ahj"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="aly_group_oasis_admin" model="res.groups">
+            <field name="name">Oasis Admins</field>
+            <field name="category_id" ref="aly_module_category_ahj"/>
+            <field name="implied_ids" eval="[(4, ref('aly_group_oasis_doctor'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

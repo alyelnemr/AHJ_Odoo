@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record id="aly_oasis_patients_form" model="ir.ui.view">
+            <field name="name">Oasis Patients Form</field>
+            <field name="model">oasis.patients</field>
+            <field name="arch" type="xml">
+            <form string="Patients Form" >
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="patient_name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="patient_file_id"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="patient_episode_id" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+            </field>
+        </record>
+
+        <record id="aly_oasis_patients_list" model="ir.ui.view">
+          <field name="name">Oasis Patients list</field>
+          <field name="model">oasis.patients</field>
+          <field name="arch" type="xml">
+            <tree string="Patients list" >
+              <field name="patient_id"/>
+              <field name="patient_file_id"/>
+              <field name="patient_name"/>
+            </tree>
+          </field>
+        </record>
+
+        <record id="aly_action_oasis_patient" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">oasis.patients</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Patients. Let's create one!
+                </p>
+                <p>
+                    Oasis Patients
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

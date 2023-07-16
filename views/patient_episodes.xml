@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record id="aly_oasis_patient_episodes_list" model="ir.ui.view">
+          <field name="name">Patients Episodes</field>
+          <field name="model">patient.episodes</field>
+          <field name="arch" type="xml">
+            <tree string="Patient Episodes list" >
+              <field name="patient_id"/>
+              <field name="episode_no"/>
+              <field name="patient_episode_id"/>
+              <field name="doctor_id"/>
+              <field name="room_id"/>
+              <field name="work_entity_id"/>
+            </tree>
+          </field>
+        </record>
+
+        <record id="aly_view_patient_episodes_search" model="ir.ui.view">
+            <field name="name">view.patient.search</field>
+            <field name="model">patient.episodes</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="patient_episode_id"/>
+                    <field name="patient_id"/>
+                      <field name="doctor_id"/>
+                      <field name="room_id"/>
+                      <field name="work_entity_id"/>
+                        <group expand="0" string="Group By...">
+                            <filter name="group_by_work_entity_name" string="Work Entity" domain="[]"
+                                    context="{'group_by':'work_entity_id'}"/>
+                            <filter name="group_by_doctor_name" string="Doctor" domain="[]"
+                                    context="{'group_by':'doctor_id'}"/>
+                            <filter name="group_by_room_id_name" string="Room" domain="[]"
+                                    context="{'group_by':'room_id'}"/>
+                        </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="aly_action_oasis_patient_episodes" model="ir.actions.act_window">
+            <field name="name">Patient Episodes</field>
+            <field name="res_model">patient.episodes</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="aly_view_patient_episodes_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Patient Episodes. Let's create one!
+                </p>
+                <p>
+                    Patients Episodes
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_oasis_patients_admin,access_oasis_patients_admin,model_oasis_patients,aly_ahj_odoo.aly_group_oasis_admin,1,1,1,1
+access_oasis_doctors_admin,access_oasis_doctors_admin,model_oasis_doctors,aly_ahj_odoo.aly_group_oasis_admin,1,1,1,1
+access_oasis_rooms_admin,access_oasis_rooms_admin,model_oasis_rooms,aly_ahj_odoo.aly_group_oasis_admin,1,1,1,1
+access_patient_episodes_admin,access_patient_episodes_admin,model_patient_episodes,aly_ahj_odoo.aly_group_oasis_admin,1,1,1,1
+access_work_entities_admin,access_work_entities_admin,model_oasis_workentity,aly_ahj_odoo.aly_group_oasis_admin,1,1,1,1
+access_patient_prescription_admin,access_patient_prescription_admin,model_patient_prescription,aly_ahj_odoo.aly_group_oasis_admin,1,1,1,1
+access_drug_route_admin,access_drug_route_admin,model_drug_route,aly_ahj_odoo.aly_group_oasis_admin,1,1,1,1
+access_patient_prescription_doctor,access_patient_prescription_doctor,model_patient_prescription,aly_ahj_odoo.aly_group_oasis_doctor,1,1,1,0
+access_oasis_patients,access_oasis_patients,model_oasis_patients,base.group_user,1,0,0,0
+access_oasis_doctors,access_oasis_doctors,model_oasis_doctors,base.group_user,1,0,0,0
+access_oasis_rooms,access_oasis_rooms,model_oasis_rooms,base.group_user,1,0,0,0
+access_patient_episodes,access_patient_episodes,model_patient_episodes,base.group_user,1,0,0,0
+access_work_entities,access_work_entities,model_oasis_workentity,base.group_user,1,0,0,0
+access_drug_route,access_drug_route,model_drug_route,base.group_user,1,0,0,0
+access_patient_prescription,access_patient_prescription,model_patient_prescription,base.group_user,1,0,0,0

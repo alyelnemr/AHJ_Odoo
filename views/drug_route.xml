@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="aly_action_drug_route" model="ir.actions.act_window">
+            <field name="name">Drug Route</field>
+            <field name="res_model">drug.route</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
